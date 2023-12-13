@@ -1,82 +1,192 @@
 body {
-    font-family: sans-serif;
+    font-family: "Inter", sans-serif;
     margin: 0;
     padding: 20px;
-  }
-  
-  #calendar-container {
+    /* background-color: #eccbcb; */
+}
+
+#calendar-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 
-    margin: 2rem 2rem;
-    max-width: 900px;
-    justify-content: center;
-    align-items: center;
+    margin: 0.5rem 0.5rem;
+    max-width: 980px;
+    /* justify-content: center; */
+    /* align-items: center; */
 
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 0;
-  }
+    height: 130px;
+    gap: 0.1rem;
+}
 
-  .day {
-    width: 12px;
-    height: 12px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+.day {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #EDEDED;
+    border-radius: 1px;
     text-align: center;
     line-height: 15px;
     font-size: 8px;
     cursor: pointer;
-    /* Use box-shadow for subtle 3D effect */
+    /* for subtle 3D effect */
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  .day:hover {
+}
+
+.day:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .week-label {
+    border: 1px solid black;
+}
+
+.week-label {
     display: none;
     font-weight: bold;
     margin-bottom: 5px;
     text-align: center;
-  }
-  
-  .no-commits {
-    background-color: #f0f0f0;
-  }
-  
-  .low-commits {
-    background-color: #d4e3fa;
-  }
-  
-  .medium-commits {
-    background-color: #90caf9;
-  }
-  
-  .high-commits {
-    background-color: #42a5f5;
-  }
-  
-  .top-commits {
-    background-color: #007bff;
+}
+
+.no-commits {
+    background-color: #EDEDED;
+}
+
+.low-commits {
+    background-color: #ACD5F2;
+}
+
+.medium-commits {
+    background-color: #7FA8C9;
+}
+
+.high-commits {
+    background-color: #527BA0;
+}
+
+.top-commits {
+    background-color: #254E77;
     color: #fff;
-  }
-  
-  .month-label {
-    position: absolute;
+}
+
+.month-label {
+    display: flex;
+    flex-direction: row;
     top: -10px;
     left: 0;
     padding: 5px;
-    background-color: #eee;
+    /* background-color: #eee; */
     font-weight: bold;
     font-size: 12px;
-  }
-  
-  .today {
+}
+
+.today {
     border: 2px solid #007bff;
-  }
-  
+}
+
+/* main container */
+
+.container {
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+    /* grid-template: repeat(2, minmax(240px, 1fr)) / repeat(2, minmax(240px, 1fr)); */
+    display: grid;
+    grid-template: 50px 450px / 100px 1000px;
+    background-color: #fff;
+    width: 1100px;
+    height: 200px;
+    /* border: 10px solid black; */
+}
+
+.container > * {
+    /* border: 5px solid black; */
+}
+
+.months {
+    grid-area: 1/2/2/3;
+    display: flex;
+    gap: 2.5rem;
+    /* background-color: #94a6e3; */
+
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.weekdays {
+    margin-top: 0rem;
+    grid-area: 2/1/3/2;
+    /* background-color: #b7e421; */
+    width: 40px;
+    list-style: none;
+
+    font-size: 12px;
+    font-weight: 400;
+    height: 145px;
+}
+
+.weekdays > * {
+    margin: 4px 0 0 0;
+}
+
+.data {
+    grid-area: 2/2/3/3;
+    /* background-color: #9da581; */
+    height: 140px;
+}
+
+/* pop-up info */
+
+.pop-up {
+    margin-top: 1rem;
+
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 145px;
+    height: 48px;
+    border-radius: 2px;
+    font-size: 10px;
+    color: #7c7c7c;
+
+    padding-top: 1rem;
+}
+
+.pop-up > span {
+    font-size: 12px;
+    color: white;
+}
+
+/* color palette */
+
+.palette {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    display: flex;
+    width: 300px;
+    height: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.palette > div {
+    width: 15px;
+    height: 15px;
+    border-radius: 1px;
+    text-align: center;
+    line-height: 15px;
+    font-size: 8px;
+    cursor: pointer;
+    color: #959494;
+}
+
+.color0 {
+    background-color: #EDEDED;
+}
+.color1 {
+    background-color: #ACD5F2;
+}
+.color2 {
+    background-color: #7FA8C9;
+}
+.color3 {
+    background-color: #527BA0;
+}
+.color4 {
+    background-color: #254E77;
+}

@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>GitHub Contributions Heatmap</title>
+        <title>Contributions</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div id="calendar-container">
+        <div class="container">
+            <ul id="month" class="months">
+
+            </ul>
+            <ul id="weekday" class="weekdays">
+                <li>Пон</li>
+                <li>Вт</li>
+                <li>Ср</li>
+                <li>Чт</li>
+                <li>Пт</li>
+                <li>Суб</li>
+                <li>Вос</li>
+            </ul>
+            <div class="data">
+
+                <div id="calendar-container">
+    
+                </div>
+            </div>
+        </div>
+
+        <div class="palette">
+            <p>Меньше</p>
+            <div class="color0"></div>
+            <div class="color1"></div>
+            <div class="color2"></div>
+            <div class="color3"></div>
+            <div class="color4"></div>
+            <p>Больше</p>
         </div>
         <script src="index.js"></script>
     </body>
